@@ -186,6 +186,27 @@ body {
   gap: 0.75rem;
 }
 
+.go-to-workspace-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.go-to-workspace-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-input);
+  color: var(--brand-blue);
+}
+
 .theme-toggle-btn {
   background: transparent;
   border: 1px solid var(--border-subtle);
@@ -401,6 +422,18 @@ body {
 
 .card-title-group {
   flex: 1;
+}
+
+.external-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  align-self: flex-start;
+  margin-left: auto;
 }
 
 .card-role-title {
