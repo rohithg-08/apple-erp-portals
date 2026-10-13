@@ -6,26 +6,26 @@
     <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
-      content="Unified Global Enterprise Resource Planning platform for Apple."
+      content="ONEPLUS NORD — Unified Global Enterprise Resource Planning platform."
     />
-    <title>APPLE — Enterprise Portals</title>
+    <title>ONEPLUS NORD — Enterprise ERP Platform</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
     <script>
       /* Prevent theme flash */
       (function () {
         try {
-          var stored = localStorage.getItem('erp.theme');
-          var theme = stored ? stored : 'light';
+          var stored = localStorage.getItem('aureus.theme') || localStorage.getItem('erp.theme');
+          var theme = stored === 'dark' ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
           document.documentElement.style.colorScheme = theme;
         } catch (e) {
@@ -33,292 +33,668 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-DNQntKyv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-AvcXEWP1.css">
+    <script type="module" crossorigin src="./assets/index-Bo9BQGwG.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-maiANxmq.css">
   </head>
   <body>
-    <!-- Top Ambient Glow -->
-    <div class="ambient-glow" aria-hidden="true"></div>
+    <!-- ====================================================================
+         VIEW 1: PORTALS DIRECTORY (#/portals or default)
+         ==================================================================== -->
+    <div id="portalsView" class="app-view">
+      <div class="ambient-glow" aria-hidden="true"></div>
 
-    <div class="app-layout">
-      <!-- Clean Minimal Header -->
-      <header class="site-header">
-        <div class="header-container">
-          <div class="brand-group">
-            <a href="#/" class="brand-logo" id="homeBrandLink" aria-label="Apple ERP Portals Home">
-              <div class="erp-badge">
-                <svg viewBox="0 0 32 32" class="erp-icon-svg" aria-hidden="true">
-                  <rect width="32" height="32" rx="8" fill="currentColor" />
-                  <path d="M21 19.5c-.4.9-.8 1.7-1.4 2.5-.7 1-1.3 1.7-1.8 2.1-.7.6-1.4 1-2.2 1-.6 0-1.3-.2-2.1-.5-.8-.3-1.5-.5-2.2-.5-.7 0-1.5.2-2.3.5-.8.3-1.5.5-2 .5-.7 0-1.4-.3-2.2-1-.6-.5-1.2-1.2-1.9-2.2-1-1.6-1.8-3.4-2.4-5.4-.6-2-.9-3.9-.9-5.8 0-2.3.6-4.2 1.8-5.7 1.2-1.5 2.7-2.3 4.5-2.3.8 0 1.6.2 2.5.6.9.4 1.5.6 1.7.6.3 0 .9-.2 1.8-.6.9-.4 1.7-.5 2.5-.5 1.9.1 3.5.8 4.7 2.1-1.7 1-2.5 2.5-2.5 4.3 0 1.4.5 2.6 1.6 3.6 1 1 2.3 1.5 3.8 1.6-.4 1.1-.9 2.3-1.4 3.4zM16.1 4.2c0-1.2.4-2.3 1.2-3.3.8-1 1.9-1.7 3.1-2 .1.2.1.4.1.6 0 1.2-.4 2.3-1.3 3.3-.9 1-1.9 1.7-3.1 2v-.6z" fill="#ffffff"/>
+      <div class="app-layout">
+        <!-- Minimal Portals Header -->
+        <header class="portals-header">
+          <div class="header-container">
+            <div class="brand-group">
+              <a href="#/portals" class="brand-logo" aria-label="OnePlus Nord ERP Portals">
+                <div class="erp-badge">
+                  <svg viewBox="0 0 32 32" class="erp-icon-svg" aria-hidden="true">
+                    <circle cx="16" cy="16" r="14" fill="#0b66c3" />
+                    <text x="16" y="21" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" text-anchor="middle" fill="#ffffff">ERP</text>
+                  </svg>
+                </div>
+                <span class="brand-title">ONEPLUS NORD</span>
+              </a>
+            </div>
+
+            <div class="header-actions">
+              <button class="theme-toggle-btn" id="portalsThemeBtn" type="button" aria-label="Toggle theme">
+                <svg class="icon theme-icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-              </div>
-              <span class="brand-title">APPLE</span>
-            </a>
-
-            <!-- Active Role Indicator shown when inside a role page -->
-            <div class="active-role-breadcrumb hidden" id="headerRoleBadge">
-              <span class="breadcrumb-slash">/</span>
-              <span class="breadcrumb-role-name" id="headerRoleName">Finance Portal</span>
-            </div>
-          </div>
-
-          <div class="header-actions">
-            <!-- User Profile Chip shown when inside a role -->
-            <div class="user-chip hidden" id="headerUserChip">
-              <span class="user-avatar-dot"></span>
-              <span class="user-email-text" id="headerUserEmail">employee@apple.com</span>
-            </div>
-
-            <!-- Back to Portals button shown when inside a role page -->
-            <button
-              id="backToPortalsBtn"
-              class="back-portals-btn hidden"
-              type="button"
-            >
-              ← Back to Portals
-            </button>
-
-            <!-- Theme Toggle Button -->
-            <button
-              id="themeToggleBtn"
-              class="theme-toggle-btn"
-              type="button"
-              aria-label="Toggle Dark / Light theme"
-              title="Toggle theme"
-            >
-              <svg class="icon theme-icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-              <svg class="icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <!-- VIEW 1: Main Portals Hub (List of 17 roles) -->
-      <main class="main-content" id="portalsHubView">
-        <div class="content-wrapper">
-          <section class="hero-section">
-            <div class="foundation-pill">
-              <span class="pill-dot"></span>
-              <span class="pill-text">Foundation build</span>
-            </div>
-
-            <h1 class="hero-title">APPLE</h1>
-
-            <p class="hero-description">
-              Unified Global Enterprise Resource Planning platform. Access role-specific
-              portals below or enter directly into the executive dashboard.
-            </p>
-
-            <div class="search-stats-container">
-              <div class="search-input-wrapper">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <svg class="icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <input
-                  type="text"
-                  id="roleSearchInput"
-                  placeholder="Search any of the 17 roles (e.g. Finance, Warehouse, HR)"
-                  autocomplete="off"
-                  spellcheck="false"
-                />
-                <button id="clearSearchBtn" class="clear-search-btn hidden" type="button" aria-label="Clear Search">
-                  ✕
-                </button>
-              </div>
-
-              <div class="role-counter-badge" id="roleCounterBadge">
-                <span id="roleCountNumber">17</span> total active role portals
-              </div>
-            </div>
-          </section>
-
-          <section class="portals-grid-section">
-            <div class="portals-grid" id="portalsGrid">
-              <!-- Rendered via app.js -->
-            </div>
-
-            <div class="empty-results-state hidden" id="emptyResultsState">
-              <h3 class="empty-title">No matching portals found</h3>
-              <p class="empty-desc">No role matches your search "<span id="emptyQueryText"></span>".</p>
-              <button id="resetSearchBtn" class="reset-filter-btn" type="button">
-                View All Portals
-              </button>
-            </div>
-          </section>
-        </div>
-      </main>
-
-      <!-- VIEW 2: Particular Role Dashboard Page (Rendered after Login) -->
-      <main class="main-content hidden" id="roleDashboardView">
-        <div class="content-wrapper">
-          <!-- Role Dashboard Header -->
-          <div class="role-page-header">
-            <div class="role-page-title-group">
-              <div class="role-page-icon-wrapper" id="pageRoleIcon">
-                <!-- Injected SVG -->
-              </div>
-              <div>
-                <div class="role-page-tagline" id="pageRoleTagline">CAPITAL & CONTROL</div>
-                <h1 class="role-page-title" id="pageRoleTitle">Finance Portal</h1>
-              </div>
-            </div>
-
-            <div class="role-page-actions">
-              <button class="btn btn-secondary" id="pageRefreshBtn" type="button">
-                ↻ Refresh Live Data
-              </button>
-              <button class="btn btn-primary" id="pageActionBtn" type="button">
-                + New Entry
               </button>
             </div>
           </div>
+        </header>
 
-          <p class="role-page-description" id="pageRoleDescription">
-            GL, AR/AP, tax, treasury and close.
-          </p>
+        <!-- Portals Main Hero -->
+        <main class="main-content">
+          <div class="content-wrapper">
+            <section class="hero-section">
+              <div class="foundation-pill">
+                <span class="pill-dot"></span>
+                <span class="pill-text">Foundation build</span>
+              </div>
 
-          <!-- 4 Clean Key Metrics for this Role -->
-          <div class="metrics-grid" id="pageMetricsGrid">
-            <!-- Populated dynamically -->
+              <h1 class="hero-title">ONEPLUS NORD</h1>
+
+              <p class="hero-description">
+                Unified Global Enterprise Resource Planning platform. Access role-specific
+                portals below or enter directly into the executive dashboard.
+              </p>
+
+              <div class="search-stats-container">
+                <div class="search-input-wrapper">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input
+                    type="text"
+                    id="portalsSearchInput"
+                    placeholder="Search any of the 17 roles (e.g. Finance, Warehouse, HR)"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button id="clearPortalsSearchBtn" class="clear-search-btn hidden" type="button" aria-label="Clear Search">
+                    ✕
+                  </button>
+                </div>
+
+                <div class="role-counter-badge">
+                  <span id="portalsCountNumber">17</span> total active role portals
+                </div>
+              </div>
+            </section>
+
+            <section class="portals-grid-section">
+              <div class="portals-grid" id="portalsGridContainer">
+                <!-- Rendered dynamically via app.js -->
+              </div>
+            </section>
           </div>
+        </main>
 
-          <!-- Main Role Data Table & Workstream -->
-          <div class="dashboard-card">
-            <div class="dashboard-card-header">
-              <h2 class="card-section-title" id="pageTableTitle">Recent Activity &amp; Records</h2>
-              <span class="records-count-badge" id="pageRecordsBadge">4 active items</span>
-            </div>
-
-            <div class="table-responsive">
-              <table class="simple-data-table">
-                <thead>
-                  <tr id="pageTableHeadRow">
-                    <th>Reference ID</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Timestamp</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="pageTableBody">
-                  <!-- Populated dynamically -->
-                </tbody>
-              </table>
-            </div>
+        <!-- Pipeline Breadcrumb Footer -->
+        <footer class="site-footer">
+          <div class="footer-container">
+            <nav class="pipeline-breadcrumb-nav" aria-label="Enterprise Lifecycle Pipeline">
+              <span>Design</span>
+              <span class="pipeline-divider">·</span>
+              <span>Sourcing</span>
+              <span class="pipeline-divider">·</span>
+              <span>Procurement</span>
+              <span class="pipeline-divider">·</span>
+              <span>Manufacturing</span>
+              <span class="pipeline-divider">·</span>
+              <span>Quality</span>
+              <span class="pipeline-divider">·</span>
+              <span>Warehouse</span>
+              <span class="pipeline-divider">·</span>
+              <span>Sales</span>
+              <span class="pipeline-divider">·</span>
+              <span>Logistics</span>
+              <span class="pipeline-divider">·</span>
+              <span>After-sales</span>
+            </nav>
           </div>
-        </div>
-      </main>
-
-      <!-- Footer Pipeline identical to reference -->
-      <footer class="site-footer">
-        <div class="footer-container">
-          <nav class="pipeline-breadcrumb-nav" aria-label="Enterprise Pipeline">
-            <span>Design</span>
-            <span class="pipeline-divider">·</span>
-            <span>Sourcing</span>
-            <span class="pipeline-divider">·</span>
-            <span>Procurement</span>
-            <span class="pipeline-divider">·</span>
-            <span>Manufacturing</span>
-            <span class="pipeline-divider">·</span>
-            <span>Quality</span>
-            <span class="pipeline-divider">·</span>
-            <span>Warehouse</span>
-            <span class="pipeline-divider">·</span>
-            <span>Sales</span>
-            <span class="pipeline-divider">·</span>
-            <span>Logistics</span>
-            <span class="pipeline-divider">·</span>
-            <span>After-sales</span>
-          </nav>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
 
-    <!-- Clean, Normal, Simple Login Modal -->
-    <div class="modal-backdrop hidden" id="loginModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalRoleTitle">
-      <div class="modal-card">
-        <div class="modal-header">
-          <div class="modal-title-group">
-            <div class="modal-icon-wrapper" id="modalIconWrapper">
-              <!-- Injected SVG -->
-            </div>
-            <div>
-              <h2 class="modal-title" id="modalRoleTitle">Super Admin</h2>
-              <p class="modal-subtitle" id="modalRoleTagline">PLATFORM GOVERNANCE</p>
-            </div>
-          </div>
-          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
-            ✕
+    <!-- ====================================================================
+         VIEW 2: DEDICATED ROLE LOGIN PAGE (#/login/:role)
+         ==================================================================== -->
+    <div id="loginView" class="app-view hidden">
+      <div class="login-page-container">
+        <!-- Top Navigation -->
+        <div class="login-nav-bar">
+          <a href="#/portals" class="back-link" id="loginBackLink">
+            ← All portals
+          </a>
+          <button class="theme-toggle-btn" id="loginThemeBtn" type="button" aria-label="Toggle theme">
+            <svg class="icon theme-icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+            </svg>
+            <svg class="icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
           </button>
         </div>
 
-        <form class="modal-body" id="simpleLoginForm" onsubmit="return false;">
-          <div class="route-badge-row">
-            <span class="route-label">Destination:</span>
-            <code class="route-code" id="modalRouteText">/login/super-admin</code>
-          </div>
-
-          <!-- Alert message box -->
-          <div class="alert-box hidden" id="loginAlertBox"></div>
-
-          <div class="form-group">
-            <label for="loginEmail">Work Email</label>
-            <input
-              type="email"
-              id="loginEmail"
-              required
-              placeholder="name@apple.com"
-              value="employee@apple.com"
-            />
-          </div>
-
-          <div class="form-group">
-            <div class="label-row">
-              <label for="loginPassword">Password</label>
-              <a href="#forgot" class="forgot-link" tabindex="-1">Forgot password?</a>
+        <!-- Login Form Card -->
+        <div class="login-card-wrapper">
+          <div class="login-card">
+            <!-- Header with Icon & Subtitle -->
+            <div class="login-card-brand">
+              <div class="login-role-icon" id="loginRoleIcon">
+                <!-- SVG -->
+              </div>
+              <div class="login-brand-text">
+                <span class="login-brand-name">ONEPLUS NORD</span>
+                <span class="login-role-subtitle" id="loginRoleSubtitle">Strategy &amp; performance</span>
+              </div>
             </div>
-            <input
-              type="password"
-              id="loginPassword"
-              required
-              placeholder="••••••••••••"
-              value="SecureEnterprisePass2026!"
-            />
+
+            <h1 class="login-title" id="loginRoleTitle">Executive</h1>
+            <p class="login-desc" id="loginRoleDescription">Enterprise strategy, performance and approvals.</p>
+
+            <form id="roleLoginForm" onsubmit="return false;">
+              <div class="form-group">
+                <label for="workEmailInput">Work email</label>
+                <input
+                  type="email"
+                  id="workEmailInput"
+                  required
+                  value="executive@aureus.example"
+                  spellcheck="false"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <div class="password-input-wrapper">
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    required
+                    value="Aureus@2026!EXECUTIVE"
+                  />
+                  <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="Toggle password visibility">
+                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-check-row">
+                <label class="remember-label">
+                  <input type="checkbox" id="keepSignedIn" checked />
+                  <span>Keep me signed in on this device</span>
+                </label>
+              </div>
+
+              <button type="submit" class="enter-workspace-btn" id="enterWorkspaceBtn">
+                <span id="enterBtnText">Enter Executive workspace</span>
+              </button>
+
+              <!-- Demo Credentials Box -->
+              <div class="demo-credentials-box">
+                <div class="demo-box-label">DEMO CREDENTIALS</div>
+                <div class="demo-box-row">
+                  <span class="demo-key">email</span>
+                  <span class="demo-val" id="demoEmailVal">executive@aureus.example</span>
+                </div>
+                <div class="demo-box-row">
+                  <span class="demo-key">password</span>
+                  <span class="demo-val" id="demoPasswordVal">Aureus@2026!EXECUTIVE</span>
+                </div>
+                <button type="button" class="fill-demo-link" id="fillDemoBtn">
+                  Fill demo credentials
+                </button>
+              </div>
+            </form>
           </div>
 
-          <div class="form-checkbox-row">
-            <label class="checkbox-container">
-              <input type="checkbox" id="rememberMe" checked />
-              <span class="checkbox-label">Keep me signed in on this device</span>
-            </label>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="submitLoginBtn">
-              <span class="btn-spinner hidden" id="loginSpinner"></span>
-              <span id="loginBtnText">Sign In &amp; Launch Portal</span>
-            </button>
-            <button type="button" class="btn btn-secondary" id="quickDemoBtn">
-              Quick Demo Sign In
-            </button>
-          </div>
-        </form>
+          <p class="login-footer-disclaimer">
+            Sessions idle out automatically and are locked after five failed attempts.
+          </p>
+        </div>
       </div>
     </div>
-
+
+    <!-- ====================================================================
+         VIEW 3: COMPLETE GLOBAL ENTERPRISE ERP WORKSPACE / DASHBOARD
+         ==================================================================== -->
+    <div id="workspaceView" class="app-view hidden">
+      <div class="dashboard-layout">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar-nav" id="sidebarNav">
+          <div class="sidebar-header">
+            <button class="menu-toggle-btn" id="sidebarCollapseBtn" aria-label="Toggle navigation menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+            <span class="sidebar-brand-name">ONEPLUS NORD</span>
+            <button class="collapse-chevron-btn" id="collapseChevronBtn" aria-label="Collapse sidebar">
+              ‹
+            </button>
+          </div>
+
+          <div class="sidebar-scrollable">
+            <!-- Navigation Section -->
+            <div class="sidebar-group">
+              <div class="group-title">NAVIGATION</div>
+              <a href="#/workspace" class="nav-item active" data-tab="home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <span>Home Dashboard</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="analytics">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Analytics &amp; BI</span>
+              </a>
+            </div>
+
+            <!-- Top Management Section -->
+            <div class="sidebar-group">
+              <div class="group-title">TOP MANAGEMENT (OWNER / MD)</div>
+              <a href="javascript:void(0)" class="nav-item" data-tab="md-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>MD Executive Center</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="cost-pricing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Product Cost &amp; Selling Price</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="tasks">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Task Assignments &amp; Team</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="electricity">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span>Factory Electricity &amp; Running Costs</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="machines">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>Machine Performance &amp; Production</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="bom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
+                <span>Product Parts List &amp; Recipe (BOM)</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="order-feasibility">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Customer Order Feasibility</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="hiring">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <span>Staff Hiring &amp; Team Records</span>
+              </a>
+            </div>
+
+            <!-- System & Admin Section -->
+            <div class="sidebar-group">
+              <div class="group-title">SYSTEM &amp; ADMIN</div>
+              <a href="javascript:void(0)" class="nav-item" data-tab="settings">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Settings</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="audit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <span>Audit Trail</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="profile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Profile</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom User Card -->
+          <div class="sidebar-user-card">
+            <div class="user-avatar-badge" id="sidebarUserInitials">HM</div>
+            <div class="user-info-text">
+              <div class="user-name-title" id="sidebarUserName">Helena Moreau</div>
+              <div class="user-role-title" id="sidebarUserRole">Chief Executive Officer</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <div class="workspace-main">
+          <!-- Top Global Dashboard Bar -->
+          <header class="workspace-topbar">
+            <div class="topbar-left">
+              <button class="topbar-mobile-btn" id="mobileMenuBtn">☰</button>
+              <h2 class="topbar-page-name" id="currentViewTitle">Home</h2>
+            </div>
+
+            <!-- Command Search Input -->
+            <div class="command-search-bar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" placeholder="Search commands, pages &amp; r..." />
+              <kbd class="ctrl-k-badge">Ctrl K</kbd>
+            </div>
+
+            <!-- Topbar Right Controls -->
+            <div class="topbar-right">
+              <!-- Active Role Pill -->
+              <div class="role-pill-indicator">
+                <span class="role-dot-green"></span>
+                <span id="topbarRoleName">Executive</span>
+              </div>
+
+              <!-- Portals Switcher Button -->
+              <a href="#/portals" class="portals-hub-jump-btn" title="Return to Portals Directory">
+                ⊞ Portals
+              </a>
+
+              <!-- Notification Bell -->
+              <button class="icon-bubble-btn" type="button" aria-label="Notifications">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <span class="badge-count">1</span>
+              </button>
+
+              <!-- Dark/Light Theme Toggle -->
+              <button class="icon-bubble-btn" id="workspaceThemeBtn" type="button" aria-label="Toggle theme">
+                <svg class="icon theme-icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                </svg>
+                <svg class="icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </button>
+
+              <!-- User Initials Avatar -->
+              <div class="topbar-avatar" id="topbarAvatar">HM</div>
+            </div>
+          </header>
+
+          <!-- Workspace Content Body -->
+          <div class="workspace-scroll-area">
+            <div class="workspace-content-container">
+              <!-- Dashboard Page Title -->
+              <div class="workspace-hero">
+                <h1 class="workspace-main-title">GLOBAL ENTERPRISE ERP</h1>
+                <p class="workspace-main-subtitle">Executive Operations Overview · Live Enterprise Telemetry</p>
+              </div>
+
+              <!-- Row 1: 4 Key Chart Cards -->
+              <div class="dashboard-grid-4">
+                <!-- Card 1: Revenue This Month -->
+                <div class="chart-kpi-card">
+                  <div class="card-head-row">
+                    <span class="card-head-title">Revenue This Month</span>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="kpi-value-lg">$ 103.65M</div>
+                  <!-- SVG Bar Chart -->
+                  <div class="chart-canvas-box" id="revenueBarChartBox">
+                    <svg viewBox="0 0 340 130" class="responsive-svg-chart">
+                      <!-- Grid lines -->
+                      <line x1="45" y1="10" x2="330" y2="10" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="45" x2="330" y2="45" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="80" x2="330" y2="80" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="110" x2="330" y2="110" stroke="var(--border-chart)"/>
+                      <!-- Y Labels -->
+                      <text x="38" y="14" class="chart-tick-text" text-anchor="end">18,000</text>
+                      <text x="38" y="49" class="chart-tick-text" text-anchor="end">13,500</text>
+                      <text x="38" y="84" class="chart-tick-text" text-anchor="end">9,000</text>
+                      <text x="38" y="114" class="chart-tick-text" text-anchor="end">0</text>
+                      <!-- Bars -->
+                      <rect x="62" y="65" width="22" height="45" rx="3" fill="#0b66c3"/>
+                      <rect x="106" y="55" width="22" height="55" rx="3" fill="#0b66c3"/>
+                      <rect x="150" y="52" width="22" height="58" rx="3" fill="#0b66c3"/>
+                      <rect x="194" y="38" width="22" height="72" rx="3" fill="#0b66c3"/>
+                      <rect x="238" y="32" width="22" height="78" rx="3" fill="#0b66c3"/>
+                      <rect x="282" y="16" width="22" height="94" rx="3" fill="#0b66c3"/>
+                      <!-- X Labels -->
+                      <text x="73" y="125" class="chart-tick-text" text-anchor="middle">Jan</text>
+                      <text x="117" y="125" class="chart-tick-text" text-anchor="middle">Feb</text>
+                      <text x="161" y="125" class="chart-tick-text" text-anchor="middle">Mar</text>
+                      <text x="205" y="125" class="chart-tick-text" text-anchor="middle">Apr</text>
+                      <text x="249" y="125" class="chart-tick-text" text-anchor="middle">Aug</text>
+                      <text x="293" y="125" class="chart-tick-text" text-anchor="middle">Oct</text>
+                    </svg>
+                  </div>
+                  <div class="chart-legend-bottom">
+                    <span class="legend-color-dot" style="background:#0b66c3;"></span>
+                    <span>Revenue This Month</span>
+                  </div>
+                </div>
+
+                <!-- Card 2: Accounts Receivable -->
+                <div class="chart-kpi-card">
+                  <div class="card-head-row">
+                    <span class="card-head-title">Accounts Receivable</span>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="kpi-value-lg">$ 238,397</div>
+                  <!-- SVG Smooth Line Chart -->
+                  <div class="chart-canvas-box">
+                    <svg viewBox="0 0 340 130" class="responsive-svg-chart">
+                      <line x1="48" y1="15" x2="330" y2="15" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="48" y1="55" x2="330" y2="55" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="48" y1="95" x2="330" y2="95" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="48" y1="110" x2="330" y2="110" stroke="var(--border-chart)"/>
+                      <!-- Y Labels -->
+                      <text x="42" y="19" class="chart-tick-text" text-anchor="end">180,000</text>
+                      <text x="42" y="59" class="chart-tick-text" text-anchor="end">135,000</text>
+                      <text x="42" y="99" class="chart-tick-text" text-anchor="end">90,000</text>
+                      <!-- Smooth Curve -->
+                      <path d="M 60 92 Q 110 62, 160 52 T 260 32 T 320 18" fill="none" stroke="#0b66c3" stroke-width="3" stroke-linecap="round"/>
+                      <!-- X Labels -->
+                      <text x="60" y="125" class="chart-tick-text" text-anchor="middle">Jan</text>
+                      <text x="125" y="125" class="chart-tick-text" text-anchor="middle">Feb</text>
+                      <text x="190" y="125" class="chart-tick-text" text-anchor="middle">Mar</text>
+                      <text x="255" y="125" class="chart-tick-text" text-anchor="middle">Apr</text>
+                      <text x="320" y="125" class="chart-tick-text" text-anchor="middle">May</text>
+                    </svg>
+                  </div>
+                  <div class="chart-legend-bottom">
+                    <span class="legend-color-line" style="background:#0b66c3;"></span>
+                    <span>Accounts Receivable</span>
+                  </div>
+                </div>
+
+                <!-- Card 3: Inventory Status (Donut Chart) -->
+                <div class="chart-kpi-card">
+                  <div class="card-head-row">
+                    <span class="card-head-title">Inventory Status</span>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="kpi-value-lg text-green">↑ 16.3%</div>
+                  <!-- Donut Chart with Legend -->
+                  <div class="donut-chart-row">
+                    <div class="donut-svg-wrapper">
+                      <svg viewBox="0 0 100 100" class="donut-svg">
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="#e2e8f0" stroke-width="12"/>
+                        <!-- Donut segments -->
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="#10b981" stroke-width="12" stroke-dasharray="85 154" stroke-dashoffset="0"/>
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="#0b66c3" stroke-width="12" stroke-dasharray="55 184" stroke-dashoffset="-85"/>
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="#ef4444" stroke-width="12" stroke-dasharray="45 194" stroke-dashoffset="-140"/>
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="#f59e0b" stroke-width="12" stroke-dasharray="54 185" stroke-dashoffset="-185"/>
+                      </svg>
+                      <div class="donut-center-text">12.5%</div>
+                    </div>
+                    <div class="donut-legend-col">
+                      <div class="donut-legend-item"><span class="donut-dot" style="background:#10b981;"></span> High</div>
+                      <div class="donut-legend-item"><span class="donut-dot" style="background:#0b66c3;"></span> Med</div>
+                      <div class="donut-legend-item"><span class="donut-dot" style="background:#ef4444;"></span> Few</div>
+                      <div class="donut-legend-item"><span class="donut-dot" style="background:#f59e0b;"></span> Low</div>
+                    </div>
+                  </div>
+                  <div class="chart-sub-caption">Real-time warehouse threshold allocation</div>
+                </div>
+
+                <!-- Card 4: Open Orders -->
+                <div class="chart-kpi-card">
+                  <div class="card-head-row">
+                    <span class="card-head-title">Open Orders</span>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="kpi-value-lg">$ 122,300</div>
+                  <!-- Stacked Bar Chart -->
+                  <div class="chart-canvas-box">
+                    <svg viewBox="0 0 340 130" class="responsive-svg-chart">
+                      <line x1="45" y1="15" x2="330" y2="15" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="45" x2="330" y2="45" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="75" x2="330" y2="75" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="45" y1="110" x2="330" y2="110" stroke="var(--border-chart)"/>
+                      <!-- Labels -->
+                      <text x="38" y="19" class="chart-tick-text" text-anchor="end">40,000</text>
+                      <text x="38" y="49" class="chart-tick-text" text-anchor="end">25,000</text>
+                      <text x="38" y="79" class="chart-tick-text" text-anchor="end">10,000</text>
+                      <!-- Stacked Bars -->
+                      <!-- Jan -->
+                      <rect x="58" y="88" width="24" height="22" rx="2" fill="#0b66c3"/>
+                      <rect x="58" y="72" width="24" height="15" rx="2" fill="#60a5fa"/>
+                      <!-- Feb -->
+                      <rect x="112" y="80" width="24" height="30" rx="2" fill="#0b66c3"/>
+                      <rect x="112" y="60" width="24" height="19" rx="2" fill="#60a5fa"/>
+                      <!-- Mar -->
+                      <rect x="166" y="75" width="24" height="35" rx="2" fill="#0b66c3"/>
+                      <rect x="166" y="45" width="24" height="29" rx="2" fill="#60a5fa"/>
+                      <!-- Apr -->
+                      <rect x="220" y="68" width="24" height="42" rx="2" fill="#0b66c3"/>
+                      <rect x="220" y="28" width="24" height="39" rx="2" fill="#60a5fa"/>
+                      <!-- May -->
+                      <rect x="274" y="65" width="24" height="45" rx="2" fill="#0b66c3"/>
+                      <rect x="274" y="22" width="24" height="42" rx="2" fill="#60a5fa"/>
+                      <!-- X -->
+                      <text x="70" y="125" class="chart-tick-text" text-anchor="middle">Jan</text>
+                      <text x="124" y="125" class="chart-tick-text" text-anchor="middle">Feb</text>
+                      <text x="178" y="125" class="chart-tick-text" text-anchor="middle">Mar</text>
+                      <text x="232" y="125" class="chart-tick-text" text-anchor="middle">Apr</text>
+                      <text x="286" y="125" class="chart-tick-text" text-anchor="middle">May</text>
+                    </svg>
+                  </div>
+                  <div class="chart-legend-bottom">
+                    <span class="legend-color-dot" style="background:#60a5fa;"></span>
+                    <span>Open Orders</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: 3 Analytics Breakdown Cards -->
+              <div class="dashboard-grid-3">
+                <!-- Bottom Card 1: Inventory vs Monthly Target Velocity -->
+                <div class="chart-analytics-card">
+                  <div class="card-head-row">
+                    <div>
+                      <h3 class="card-head-title">Inventory Status</h3>
+                      <p class="card-head-subtitle">Inventory vs Monthly Target Velocity</p>
+                    </div>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="chart-canvas-box-lg">
+                    <svg viewBox="0 0 340 160" class="responsive-svg-chart">
+                      <line x1="30" y1="20" x2="330" y2="20" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="65" x2="330" y2="65" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="110" x2="330" y2="110" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="140" x2="330" y2="140" stroke="var(--border-chart)"/>
+                      <text x="25" y="24" class="chart-tick-text" text-anchor="end">3600</text>
+                      <text x="25" y="69" class="chart-tick-text" text-anchor="end">2700</text>
+                      <text x="25" y="114" class="chart-tick-text" text-anchor="end">1800</text>
+                      <text x="25" y="144" class="chart-tick-text" text-anchor="end">900</text>
+                      <!-- Columns -->
+                      <rect x="45" y="80" width="20" height="60" rx="3" fill="#0b66c3"/>
+                      <rect x="75" y="55" width="20" height="85" rx="3" fill="#0b66c3"/>
+                      <rect x="105" y="58" width="20" height="82" rx="3" fill="#0b66c3"/>
+                      <rect x="135" y="50" width="20" height="90" rx="3" fill="#0b66c3"/>
+                      <rect x="165" y="45" width="20" height="95" rx="3" fill="#0b66c3"/>
+                      <rect x="195" y="70" width="20" height="70" rx="3" fill="#0b66c3"/>
+                      <rect x="225" y="38" width="20" height="102" rx="3" fill="#0b66c3"/>
+                      <rect x="255" y="30" width="20" height="110" rx="3" fill="#0b66c3"/>
+                      <!-- Curved trendline -->
+                      <path d="M 55 90 Q 100 50, 145 68 T 235 48 T 295 24" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Bottom Card 2: Workforce & Production Workloads (Horizontal Bars) -->
+                <div class="chart-analytics-card">
+                  <div class="card-head-row">
+                    <div>
+                      <h3 class="card-head-title">Inventory Status</h3>
+                      <p class="card-head-subtitle">Workforce &amp; Production Workloads</p>
+                    </div>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="horizontal-bars-container">
+                    <div class="hbar-item">
+                      <span class="hbar-label">Ext</span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 25%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label"></span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 12%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label">Nov</span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 48%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label"></span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 32%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label">Dec</span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 82%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label"></span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 42%;"></div></div>
+                    </div>
+                    <div class="hbar-item">
+                      <span class="hbar-label">Mon</span>
+                      <div class="hbar-track"><div class="hbar-fill" style="width: 20%;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Card 3: Dispatch & Delivery Backlog -->
+                <div class="chart-analytics-card">
+                  <div class="card-head-row">
+                    <div>
+                      <h3 class="card-head-title">Open Orders</h3>
+                      <p class="card-head-subtitle">Dispatch &amp; Delivery Backlog</p>
+                    </div>
+                    <button class="dots-btn">•••</button>
+                  </div>
+                  <div class="chart-canvas-box-lg">
+                    <svg viewBox="0 0 340 160" class="responsive-svg-chart">
+                      <line x1="30" y1="20" x2="330" y2="20" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="65" x2="330" y2="65" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="110" x2="330" y2="110" stroke="var(--border-chart)" stroke-dasharray="3 3"/>
+                      <line x1="30" y1="140" x2="330" y2="140" stroke="var(--border-chart)"/>
+                      <text x="25" y="24" class="chart-tick-text" text-anchor="end">1200</text>
+                      <text x="25" y="69" class="chart-tick-text" text-anchor="end">900</text>
+                      <text x="25" y="114" class="chart-tick-text" text-anchor="end">600</text>
+                      <text x="25" y="144" class="chart-tick-text" text-anchor="end">300</text>
+                      <!-- Grouped Columns -->
+                      <rect x="50" y="90" width="35" height="50" rx="3" fill="#60a5fa"/>
+                      <rect x="110" y="70" width="35" height="70" rx="3" fill="#60a5fa"/>
+                      <rect x="170" y="85" width="35" height="55" rx="3" fill="#60a5fa"/>
+                      <rect x="230" y="80" width="35" height="60" rx="3" fill="#60a5fa"/>
+                      <rect x="290" y="25" width="35" height="115" rx="3" fill="#60a5fa"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
