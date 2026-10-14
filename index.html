@@ -25,7 +25,7 @@
       /* Prevent theme flash */
       (function () {
         try {
-          var stored = localStorage.getItem('aureus.theme') || localStorage.getItem('erp.theme');
+          var stored = localStorage.getItem('apple.theme') || localStorage.getItem('erp.theme');
           var theme = stored === 'dark' ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
           document.documentElement.style.colorScheme = theme;
@@ -364,7 +364,7 @@
                   type="email"
                   id="workEmailInput"
                   required
-                  value="executive@aureus.example"
+                  value="executive@apple.example"
                   spellcheck="false"
                 />
               </div>
@@ -376,7 +376,7 @@
                     type="password"
                     id="passwordInput"
                     required
-                    value="Aureus@2026!EXECUTIVE"
+                    value="Apple@2026!EXECUTIVE"
                   />
                   <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="Toggle password visibility">
                     <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -403,11 +403,11 @@
                 <div class="demo-box-label">DEMO CREDENTIALS</div>
                 <div class="demo-box-row">
                   <span class="demo-key">email</span>
-                  <span class="demo-val" id="demoEmailVal">executive@aureus.example</span>
+                  <span class="demo-val" id="demoEmailVal">executive@apple.example</span>
                 </div>
                 <div class="demo-box-row">
                   <span class="demo-key">password</span>
-                  <span class="demo-val" id="demoPasswordVal">Aureus@2026!EXECUTIVE</span>
+                  <span class="demo-val" id="demoPasswordVal">Apple@2026!EXECUTIVE</span>
                 </div>
                 <button type="button" class="fill-demo-link" id="fillDemoBtn">
                   Fill demo credentials
