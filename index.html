@@ -6,9 +6,9 @@
     <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
-      content="ONEPLUS NORD — Unified Global Enterprise Resource Planning platform."
+      content="APPLE ENTERPRISE — Unified Global Enterprise Resource Planning platform."
     />
-    <title>ONEPLUS NORD — Enterprise ERP Platform</title>
+    <title>APPLE ENTERPRISE — Enterprise ERP Platform</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,8 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
 
     <script>
       /* Prevent theme flash */
@@ -33,8 +34,6 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-CLq1nRo8.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DtKTUcyl.css">
   </head>
   <body>
     <!-- ====================================================================
@@ -48,14 +47,14 @@
         <header class="portals-header">
           <div class="header-container">
             <div class="brand-group">
-              <a href="#/portals" class="brand-logo" aria-label="OnePlus Nord ERP Portals">
+              <a href="#/portals" class="brand-logo" aria-label="Apple Enterprise ERP Portals">
                 <div class="erp-badge">
                   <svg viewBox="0 0 32 32" class="erp-icon-svg" aria-hidden="true">
                     <circle cx="16" cy="16" r="14" fill="#0b66c3" />
                     <text x="16" y="21" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" text-anchor="middle" fill="#ffffff">ERP</text>
                   </svg>
                 </div>
-                <span class="brand-title">ONEPLUS NORD</span>
+                <span class="brand-title">APPLE ENTERPRISE</span>
               </a>
             </div>
 
@@ -92,13 +91,43 @@
                 <span class="pill-text">Foundation build</span>
               </div>
 
-              <h1 class="hero-title">ONEPLUS NORD</h1>
+              <h1 class="hero-title">APPLE ENTERPRISE</h1>
 
               <p class="hero-description">
                 Unified Global Enterprise Resource Planning platform. Access role-specific
                 portals below or enter directly into the executive dashboard.
               </p>
 
+              <!-- Main View Mode Switcher -->
+              <nav class="view-mode-tabs" id="viewModeTabs" aria-label="Portal Navigation Views">
+                <button class="view-mode-tab active" data-view="portals-grid" id="tabPortalsGrid" type="button">
+                  <span class="tab-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  </span>
+                  <span class="tab-label">17 Role Portals</span>
+                  <span class="tab-badge">Active Directory</span>
+                </button>
+                <button class="view-mode-tab" data-view="kpis-guide" id="tabKpisGuide" type="button">
+                  <span class="tab-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                  </span>
+                  <span class="tab-label">20 NetSuite KPIs</span>
+                  <span class="tab-badge">Business Guide</span>
+                </button>
+                <button class="view-mode-tab" data-view="erp-guide" id="tabErpGuide" type="button">
+                  <span class="tab-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                  </span>
+                  <span class="tab-label">Modern ERP Architecture</span>
+                  <span class="tab-badge">9 Vendor Qs</span>
+                </button>
+              </nav>
+            </section>
+
+            <!-- ==========================================================
+                 PORTALS DIRECTORY GRID (17 ROLES — DEFAULT NORMAL VIEW)
+                 ========================================================== -->
+            <section class="portals-grid-section" id="portalsGridSection">
               <div class="search-stats-container">
                 <div class="search-input-wrapper">
                   <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -108,7 +137,7 @@
                   <input
                     type="text"
                     id="portalsSearchInput"
-                    placeholder="Search any of the 17 roles (e.g. Finance, Warehouse, HR)"
+                    placeholder="Search any of the 17 roles (e.g. Finance, Warehouse, HR, Sales)"
                     autocomplete="off"
                     spellcheck="false"
                   />
@@ -121,11 +150,142 @@
                   <span id="portalsCountNumber">17</span> total active role portals
                 </div>
               </div>
-            </section>
 
-            <section class="portals-grid-section">
               <div class="portals-grid" id="portalsGridContainer">
                 <!-- Rendered dynamically via app.js -->
+              </div>
+            </section>
+
+            <!-- ==========================================================
+                 SECTION C: 20 MAKE-OR-BREAK KPIS (NETSUITE BUSINESS GUIDE)
+                 ========================================================== -->
+            <section class="portal-subview-panel hidden" id="kpisGuideSection">
+              <!-- KPI Guide Hero -->
+              <div class="kpi-guide-header-box">
+                <div class="kpi-guide-badge">Oracle NetSuite Business Guide</div>
+                <h2 class="kpi-guide-title">Make or Break Metrics: 20 KPIs Every Growing Business Should Track</h2>
+                <p class="kpi-guide-desc">
+                  Key performance indicators (KPIs) are quantifiable business metrics that track progress toward strategic objectives. High-level KPIs monitor enterprise vitality; lower-level KPIs govern department processes, inventories, and cash conversion.
+                </p>
+
+                <!-- 5 Reasons Why KPIs Matter (From PDF 1 Chapter 1) -->
+                <div class="kpi-5-reasons-grid">
+                  <div class="reason-pill">
+                    <span class="reason-num">1</span>
+                    <span class="reason-text">Monitor company health</span>
+                  </div>
+                  <div class="reason-pill">
+                    <span class="reason-num">2</span>
+                    <span class="reason-text">Reveal patterns &amp; trends</span>
+                  </div>
+                  <div class="reason-pill">
+                    <span class="reason-num">3</span>
+                    <span class="reason-text">Uncover trouble spots</span>
+                  </div>
+                  <div class="reason-pill">
+                    <span class="reason-num">4</span>
+                    <span class="reason-text">Measure progress to goals</span>
+                  </div>
+                  <div class="reason-pill">
+                    <span class="reason-num">5</span>
+                    <span class="reason-text">Indicate goal adjustments</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive KPI Live Sandbox / Calculator -->
+              <div class="kpi-calculator-box">
+                <div class="calc-header-row">
+                  <div>
+                    <h3 class="calc-title">Interactive Live KPI Calculator Sandbox</h3>
+                    <p class="calc-sub">Test real equations from the guide with live parameter sliders and instant AI health grading.</p>
+                  </div>
+                  <div class="calc-selector-wrap">
+                    <label for="kpiCalcSelect" class="calc-select-label">Select KPI Model:</label>
+                    <select id="kpiCalcSelect" class="kpi-select-dropdown">
+                      <option value="gross-profit-margin">1. Gross Profit Margin ((Sales - COGS) / Sales)</option>
+                      <option value="current-ratio">4. Current Ratio (Current Assets / Current Liabilities)</option>
+                      <option value="cash-conversion-cycle">13. Cash Conversion Cycle (DSO + DIO - DPO)</option>
+                      <option value="perfect-order-rate">20. Perfect Order Rate (On-Time × Complete × Damage-Free × Doc)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="calc-interactive-body" id="kpiCalcBody">
+                  <!-- Rendered dynamically via app.js -->
+                </div>
+              </div>
+
+              <!-- Filter Bar & Search for the 20 KPIs -->
+              <div class="kpi-filter-bar">
+                <div class="kpi-filter-group" id="kpiFilterButtonGroup">
+                  <button class="kpi-filter-btn active" data-kpi-filter="all">All 20 KPIs</button>
+                  <button class="kpi-filter-btn" data-kpi-filter="financial">10 Financial (Ch. 2)</button>
+                  <button class="kpi-filter-btn" data-kpi-filter="operational">10 Operational (Ch. 3)</button>
+                  <button class="kpi-filter-btn" data-kpi-filter="leading">Leading Indicators</button>
+                  <button class="kpi-filter-btn" data-kpi-filter="lagging">Lagging Indicators</button>
+                </div>
+                <div class="kpi-search-wrap">
+                  <input type="text" id="kpiSearchInput" placeholder="Search any metric (e.g. GMROI, Cash Runway, DSO)..." />
+                </div>
+              </div>
+
+              <!-- Grid of All 20 KPI Cards -->
+              <div class="kpi-cards-grid" id="kpiCardsGridContainer">
+                <!-- Rendered dynamically via app.js -->
+              </div>
+            </section>
+
+            <!-- ==========================================================
+                 SECTION D: MODERN ERP ARCHITECTURE & SELECTION GUIDE (PDF 2)
+                 ========================================================== -->
+            <section class="portal-subview-panel hidden" id="erpGuideSection">
+              <div class="erp-guide-hero">
+                <div class="kpi-guide-badge">Oracle NetSuite Strategic Guide</div>
+                <h2 class="kpi-guide-title">How to Select the Right ERP for You</h2>
+                <p class="kpi-guide-desc">
+                  Discover what to consider when choosing an enterprise resource planning system. A modern cloud ERP eliminates infrastructure costs, connects people, and leverages native artificial intelligence for automated decision-making.
+                </p>
+              </div>
+
+              <!-- 5 Main Characteristics of a Modern ERP -->
+              <div class="erp-pillars-wrapper">
+                <h3 class="erp-section-heading">5 Main Characteristics of a Modern Cloud ERP</h3>
+                <div class="erp-pillars-grid" id="erpPillarsGrid">
+                  <!-- Rendered dynamically via app.js -->
+                </div>
+              </div>
+
+              <!-- 9 Questions to Ask ERP Vendors (Interactive Audit Tool) -->
+              <div class="vendor-audit-wrapper">
+                <div class="vendor-audit-header">
+                  <div>
+                    <h3 class="erp-section-heading">9 Questions to Ask ERP Vendors</h3>
+                    <p class="vendor-audit-sub">Check each criterion to benchmark cloud readiness and evaluate vendor fit.</p>
+                  </div>
+                  <div class="vendor-score-card">
+                    <span class="score-label">Readiness Score</span>
+                    <div class="score-display">
+                      <span id="vendorScoreNumber">9</span> / 9
+                    </div>
+                    <div class="score-progress-track">
+                      <div class="score-progress-fill" id="vendorScoreBar" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="vendor-questions-grid" id="vendorQuestionsGrid">
+                  <!-- Rendered dynamically via app.js -->
+                </div>
+              </div>
+
+              <!-- 3 Keys to Convincing Internal Skeptics -->
+              <div class="skeptics-wrapper">
+                <h3 class="erp-section-heading">3 Keys to Convincing Internal Skeptics</h3>
+                <p class="skeptics-sub">Highlight specific pain points, demonstrate quick modular ROI, and de-risk deployment.</p>
+                <div class="skeptics-grid" id="skepticsGrid">
+                  <!-- Rendered dynamically via app.js -->
+                </div>
               </div>
             </section>
           </div>
@@ -189,7 +349,7 @@
                 <!-- SVG -->
               </div>
               <div class="login-brand-text">
-                <span class="login-brand-name">ONEPLUS NORD</span>
+                <span class="login-brand-name">APPLE ENTERPRISE</span>
                 <span class="login-role-subtitle" id="loginRoleSubtitle">Strategy &amp; performance</span>
               </div>
             </div>
@@ -278,7 +438,7 @@
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
             </button>
-            <span class="sidebar-brand-name">ONEPLUS NORD</span>
+            <span class="sidebar-brand-name">APPLE ENTERPRISE</span>
             <button class="collapse-chevron-btn" id="collapseChevronBtn" aria-label="Collapse sidebar">
               ‹
             </button>
@@ -288,9 +448,21 @@
             <!-- Navigation Section -->
             <div class="sidebar-group">
               <div class="group-title">NAVIGATION</div>
-              <a href="#/workspace" class="nav-item active" data-tab="home">
+              <a href="javascript:void(0)" class="nav-item active" data-tab="home">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
                 <span>Home Dashboard</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="ai-hub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.5-6.5-2.1 2.1m-8.8 8.8-2.1 2.1m0-13 2.1 2.1m8.8 8.8 2.1 2.1"></path></svg>
+                <span>AI Ecosystem Hub</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="kpis-20">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>20 Make-or-Break KPIs</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" data-tab="erp-arch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                <span>Modern ERP Architecture</span>
               </a>
               <a href="javascript:void(0)" class="nav-item" data-tab="analytics">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
@@ -424,14 +596,22 @@
           <!-- Workspace Content Body -->
           <div class="workspace-scroll-area">
             <div class="workspace-content-container">
-              <!-- Dashboard Page Title -->
-              <div class="workspace-hero">
-                <h1 class="workspace-main-title">GLOBAL ENTERPRISE ERP</h1>
-                <p class="workspace-main-subtitle" id="workspaceHeroSubtitle">Executive Operations Overview · Live Enterprise Telemetry</p>
+              <!-- AI Real-Time Insight Banner -->
+              <div class="workspace-ai-insight-banner">
+                <div class="insight-badge">
+                  <span class="ai-chip-icon">AI</span>
+                  <span>Autonomous Copilot</span>
+                </div>
+                <div class="insight-ticker-content" id="workspaceAiInsightText">
+                  <strong>Telemetry Active:</strong> Cash Conversion Cycle stabilized at 21.4 days. Inventory Turnover is trending +14.2% above baseline. All 16 capabilities operating within optimal threshold bands.
+                </div>
+                <button class="insight-action-btn" id="workspaceAiScanBtn" type="button">Run Audit</button>
               </div>
 
-              <!-- Row 1: 4 Key Chart Cards -->
-              <div class="dashboard-grid-4">
+              <!-- Workspace Panel 1: Home Executive Dashboard -->
+              <div class="workspace-tab-panel" id="workspaceHomePanel">
+                <!-- Row 1: 4 Key Chart Cards -->
+                <div class="dashboard-grid-4">
                 <!-- Card 1: Revenue This Month -->
                 <div class="chart-kpi-card">
                   <div class="card-head-row">
@@ -693,11 +873,59 @@
                   </div>
                 </div>
               </div>
+              <!-- End of workspaceHomePanel -->
+              </div>
+
+              <!-- Workspace Panel 2: AI Ecosystem Hub Inside Workspace -->
+              <div class="workspace-tab-panel hidden" id="workspaceAiHubPanel">
+                <div class="workspace-section-header">
+                  <h3 class="workspace-section-title">Autonomous AI Neural Core &amp; Synchronized Capabilities</h3>
+                  <p class="workspace-section-desc">Interactive topology showing live cross-functional autonomous AI workflows across all 16 domains.</p>
+                </div>
+                <div class="workspace-ai-hub-container" id="workspaceAiHubEmbed">
+                  <!-- Injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Workspace Panel 3: 20 Make-or-Break KPIs Command Center -->
+              <div class="workspace-tab-panel hidden" id="workspaceKpisPanel">
+                <div class="workspace-section-header">
+                  <h3 class="workspace-section-title">20 Make-or-Break KPIs Enterprise Command Center</h3>
+                  <p class="workspace-section-desc">Real-time enterprise metrics tracking Oracle NetSuite's 10 Financial and 10 Operational benchmarks.</p>
+                </div>
+                <div class="workspace-kpis-container" id="workspaceKpisEmbed">
+                  <!-- Injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Workspace Panel 4: Modern ERP Architecture -->
+              <div class="workspace-tab-panel hidden" id="workspaceErpArchPanel">
+                <div class="workspace-section-header">
+                  <h3 class="workspace-section-title">Modern Cloud ERP Architecture &amp; Selection Framework</h3>
+                  <p class="workspace-section-desc">5 Pillars of Modern Cloud ERP, 9-Question Vendor Evaluation, and Skeptic Alignment Strategy.</p>
+                </div>
+                <div class="workspace-erp-arch-container" id="workspaceErpArchEmbed">
+                  <!-- Injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Workspace Generic Fallback Panel -->
+              <div class="workspace-tab-panel hidden" id="workspaceGenericPanel">
+                <div class="generic-panel-content">
+                  <div class="generic-icon-wrap" id="genericPanelIcon">⚙️</div>
+                  <h3 class="generic-panel-title" id="genericPanelTitle">Module Overview</h3>
+                  <p class="generic-panel-desc" id="genericPanelDesc">Operational management and telemetry for this division.</p>
+                  <div class="generic-kpi-summary-row" id="genericPanelKpis">
+                    <!-- Dynamic KPIs -->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+
+    <script type="module" src="/app.js"></script>
   </body>
 </html>
